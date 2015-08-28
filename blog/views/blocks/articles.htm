@@ -1,0 +1,19 @@
+<br/>
+<repeat group="{{ @result }}" value="{{ @unit }}">
+
+		<h6>{{@unit.title}}</h6>
+		<p>{{@unit.content}}</p>
+		<check if="{{@SESSION}}"><true>
+			<check if="{{@SESSION.user== @unit.author}}">
+		  		<true>
+			   		<a href="\blog/articles/edit/{{@unit.id}}" class="btn btn-lg btn-default"><span class="fui-new"></span></a>
+					<a href="\blog/articles/delete/{{@unit.id}}" class="btn btn-lg btn-danger"><span class="fui-cross"></span></a>
+					<br/>
+					<br/>
+				</true>
+			</check>
+		</true></check>
+		<small>Author: {{@unit.author}}</small>
+	<br/>
+	<br/>
+</repeat>

@@ -1,0 +1,12 @@
+<h3>{{ $title }}</h3>
+<check if="{{ $console_error==''}}">
+	<false>
+		<div class="alert alert-danger" role="alert">{{ $console_error }}</div>
+	</false>
+</check>
+<check if="{{ $console_success==''}}">
+	<false>
+		<div class="alert alert-success" role="alert">{{ $console_success }}</div>
+	</false>
+</check>
+<include href="{{$content}}" />
